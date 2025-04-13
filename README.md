@@ -29,7 +29,7 @@ This project uses machine learning models to predict the 22K gold price in INR b
 ![Gold Price Predictor Demo](demo.gif)
 ---
 
-🔧 Full-Stack Version: [Gold Price Predictor (with .NET MVC + Flask API)](https://github.com/ prasanth-joe35/GoldPricePredictor-UI)
+🔧 Full-Stack Version: [Gold Price Predictor (with .NET MVC + Flask API)](https://github.com/prasanth-joe35/GoldPricePredictor-UI)
 ## 📁 Project Structure
 
 gold-price-predictor/ ├── app.py # Gradio UI + Prediction Logic ├── ridge_model.pkl # Trained Ridge Regression model (Model 1) ├── scaler.pkl # Scaler used for Model 1 ├── gold_22k_usd_inr_data.csv # Historical gold + currency data ├── forecast_gold_22k.csv # Adjusted forecast from Prophet (Model 2) ├── user_inputs_log.csv # ✅ Logged user predictions with timestamp ├── requirements.txt # Python dependencies └── README.md # You're here
