@@ -2,6 +2,9 @@ import gradio as gr
 import pandas as pd
 import joblib
 import plotly.graph_objects as go
+import os
+from datetime import datetime
+
 
 # Load Model 1
 ridge_model = joblib.load("ridge_model.pkl")
@@ -16,6 +19,17 @@ def predict_model1(usd_inr, gold_usd):
     input_df = pd.DataFrame([[usd_inr, gold_usd]], columns=["USD_INR", "Gold_USD_per_ounce"])
     scaled = scaler.transform(input_df)
     prediction = ridge_model.predict(scaled)[0]
+    # ✅ Save log
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    new_row = pd.DataFrame([{
+            "Timestamp": timestamp,
+            "USD_INR": usd_inr,
+            "Gold_USD_per_ounce": gold_usd,
+            "Predicted_INR_22K": prediction
+        }])
+    new_row.to_csv("user_inputs_log.csv", mode='a', index=False, header=False)
+
+    
     return f"💰 Predicted 22K Gold Rate: ₹{round(prediction, 2)}"
 
 # --- Model 2: Forecast Chart from Prophet ---
