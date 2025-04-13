@@ -24,7 +24,9 @@ This project uses machine learning models to predict the 22K gold price in INR b
 - Tab 2: Visualize forecast trends
 - Tab 3: Select a future date to get predicted value
 
-![Gold Price Predictor Demo](assets/demo.gif)
+## 🖼️ Demo Preview
+
+![Gold Price Predictor Demo](demo.gif)
 ---
 
 ## 📁 Project Structure
